@@ -19,3 +19,4 @@ dev					# 默认分支，用来pull和push，队员从仓库clone此分支到本
 ### 1. [IFE热身任务](http://ife.baidu.com/static/warmup.html):
 
 本页面暂定如下[设计](http://naotu.baidu.com/file/26ca0b384bad39256348587b952f07bf?token=08bd973e79185fa8&qq-pf-to=pcqq.group)，详情等待讨论后确定。
+text!
