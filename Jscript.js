@@ -1,1 +1,1 @@
-function mouse{}
+function mouse{ }
