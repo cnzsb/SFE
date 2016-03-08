@@ -1,0 +1,7 @@
+body{ margin: 0;padding: 0; }
+#hd{width: 100%;height: 60px;	background: #333333;margin: auto;}
+#hd_main{width: 900px;height: 60px;margin: auto;}
+#hd_1{font-size: 30px;color: #ffffff;padding: 15px 0;float: left;}
+#hd_1 a{color: #ffffff;text-decoration: none;}
+#hd_1 a:hover{color:#CC0033}
+.hd_x{font-size: 26px;color: #ffffff;padding: 17px 0;float: left;margin-left: 10px;}
