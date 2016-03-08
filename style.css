@@ -2,7 +2,7 @@ body{ margin: 0;padding: 0; }
 #hd{width: 100%;height: 60px;	background: #333333;margin: auto;}
 #hd_main{width: 900px;height: 60px;margin: auto;}
 #hd_1{font-size: 30px;color: #ffffff;float: left;width: 130px;height: 60px;}
-#hd a{color: #ffffff;text-decoration: none;}
+#hd a{color: #ffffff;text-decoration: none; }
 #hd a:hover{color:#4078c0}
 .hd_x{font-size: 22px;padding:19px 4px ;color: #ffffff;float: left;width: 85px;height: 60px;}
 #hd_2{font-size: 22px;color: #ffffff;padding: 17px 0;float: right;margin-left: 20px;}
@@ -10,3 +10,8 @@ body{ margin: 0;padding: 0; }
 #banner{width: 1060px;height:315px ;margin: 10px auto;background: url(banner.jpg);}
 #main{width: 900px;height: 1000px;margin: 15px auto 0;background: #cccccc}
 #main_1{width: 900px;height: 600px;background: url(desktop.jpg)}
+#footer{width: 100%;height: 150px;background: #333333}
+#foot{width: 900px;height: 150px;margin: auto;background: #333333}
+#foot a{color: #999999;text-decoration: none;font-size: 15px}
+#foot a:hover{color:#cccccc}
+.foot_body{ padding: 10px 0px; }
