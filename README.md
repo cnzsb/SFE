@@ -14,7 +14,31 @@ dev					# 默认分支，用来pull和push，队员从仓库clone此分支到本
 
 **说明**：本仓库仅用来管理团队项目，个人项目需要自行建立仓库进行开发，开发后的demo如须展示，会公开在团队页面。
 
-## 项目
+## 文件目录
+
+```
+.
+├── dist       	  # 生成的静态网页文件，目标文件夹
+├── node_modules  # 插件
+├── src           # 原始开发文件夹，该目录下直接保存html文件
+|   ├── _tmp      # 队员项目暂存目录，该目录下存放队员项目目录 
+|   |  ├── guo
+|   |  ├── tao
+|   |  ├── zhao
+|   |  └── zhou
+|   ├── css
+|   ├── images
+|   ├── js
+|   └── scss
+├── .gitignore
+├── gulpfile.js   # gulp配置文件
+├── index.html    # 团队首页
+├── LICENSE
+├── package.json
+└── README.md
+```
+
+## 任务
 
 ### 1. [IFE热身任务](http://ife.baidu.com/static/warmup.html):
 
