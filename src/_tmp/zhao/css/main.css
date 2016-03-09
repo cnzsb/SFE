@@ -1,3 +1,8 @@
+@font-face{
+    font-family: BHITC;
+    src: url('fonts/Bradley Hand ITC.TTF');
+}
+
 /* 首屏 */
 
 #start {
@@ -32,7 +37,6 @@
     top: 25%;
     left: 50%;
     -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
     transform: translateX(-50%);
     text-align: center;
     font-size: 35px;
@@ -40,7 +44,7 @@
 }
 
 .start-content h2 {
-    font-family: "Bradley Hand ITC", serif;
+    font-family: "BHITC", serif;
     font-size: 15px;
     padding: 20px 0;
 }
@@ -71,7 +75,6 @@
     bottom: 50px;
     left: 50%;
     -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
     transform: translateX(-50%);
     background: url('../images/down-arrow.png');
     opacity: .4;
