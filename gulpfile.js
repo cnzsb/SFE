@@ -13,47 +13,48 @@ var gulp = require('gulp'),
     browserSync = require('browser-sync');
 
 // 暂时没有拼接，仅copy到新目录
-gulp.task('html', function () {
-	return gulp.src('src/**/*.html', {base: 'src'})
-		.pipe(gulp.dest('dist/'))
-		.pipe(notify({message: 'HTML done!'}));
-});
+// gulp.task('html', function () {
+// 	return gulp.src('public/**/*.html', {base: 'src'})
+// 		.pipe(gulp.dest('dist/'))
+// 		.pipe(notify({message: 'HTML done!'}));
+// });
 
 gulp.task('sass', function () {
-	return sass('src/**/*.scss', {base: 'src'}, {style: 'expanded'})
+	return sass('public/scss/*.scss', {base: 'src'}, {style: 'expanded'})
 		.pipe(autoprefixer('last 2 version', 'ie >= 7'))
-		.pipe(gulp.dest('dist/'))
+		.pipe(gulp.dest('public/css'))
 		.pipe(notify({message: 'Sass done!'}));
 });
 
-gulp.task('css', function () {
-	return gulp.src('src/**/*.css', {base: 'src'})
-		.pipe(autoprefixer('last 2 version', 'ie >= 7'))
-		.pipe(gulp.dest('dist/'))
-		.pipe(notify({message: 'CSS done!'}));
-});
+// gulp.task('css', function () {
+// 	return gulp.src('public/**/*.css', {base: 'src'})
+// 		.pipe(autoprefixer('last 2 version', 'ie >= 7'))
+// 		.pipe(gulp.dest('dist/'))
+// 		.pipe(notify({message: 'CSS done!'}));
+// });
 
 // 暂时关闭jshint,IDE中默认使用jshint
-gulp.task('js', function () {
-	return gulp.src('src/**/*.js', {base: 'src'})
-		// .pipe(jshint())
-		// .pipe(jshint.reporter('default'))
-		.pipe(gulp.dest('dist/'))
-		.pipe(notify({message: 'JS done!'}));
-});
+// gulp.task('js', function () {
+// 	return gulp.src('public/**/*.js', {base: 'src'})
+// 		// .pipe(jshint())
+// 		// .pipe(jshint.reporter('default'))
+// 		.pipe(gulp.dest('dist/'))
+// 		.pipe(notify({message: 'JS done!'}));
+// });
 
-gulp.task('img', function () {
-	return gulp.src('src/**/images/*', {base: 'src'})
-		.pipe(imagemin({optimizationLevel: 3, progressive: true, interlaced: true}))
-		.pipe(gulp.dest('dist/'))
-		.pipe(notify({message: 'Images done!'}))
-});
+// gulp.task('img', function () {
+// 	return gulp.src('public/**/images/*', {base: 'src'})
+// 		.pipe(imagemin({optimizationLevel: 3, progressive: true, interlaced: true}))
+// 		.pipe(gulp.dest('dist/'))
+// 		.pipe(notify({message: 'Images done!'}))
+// });
 
 // 默认生成所有文件
-gulp.task('default', ['html', 'sass', 'css', 'js', 'img']);
+// gulp.task('default', ['html', 'sass', 'css', 'js', 'img']);
+gulp.task('default', ['sass']);
 
 // 监听所有文件并实时生成和预览
-gulp.task('refresh', ['html', 'sass', 'css', 'js', 'img'], function () {
+gulp.task('refresh', ['sass'], function () {
 	var files = [
 		'./**/*.html',
 		'./**/*.css',
@@ -67,18 +68,18 @@ gulp.task('refresh', ['html', 'sass', 'css', 'js', 'img'], function () {
 		}
 	});
 
-	gulp.watch('src/**/*.html', ['html']);
-	gulp.watch('src/**/*.scss', ['sass']);
-	gulp.watch('src/**/*.css', ['css']);
-	gulp.watch('src/**/*.js', ['js']);
-	gulp.watch('src/**/images/*', ['img']);
+	// gulp.watch('public/**/*.html', ['html']);
+	gulp.watch('public/**/*.scss', ['sass']);
+	// gulp.watch('public/**/*.css', ['css']);
+	// gulp.watch('public/**/*.js', ['js']);
+	// gulp.watch('public/**/images/*', ['img']);
 });
 
 // 监听所有文件并实时生成
-gulp.task('watch', ['html', 'sass', 'css', 'js', 'img'], function () {
-	gulp.watch('src/**/*.html', ['html']);
-	gulp.watch('src/**/*.scss', ['sass']);
-	gulp.watch('src/**/*.css', ['css']);
-	gulp.watch('src/**/*.js', ['js']);
-	gulp.watch('src/**/images/*', ['img']);
+gulp.task('watch', ['sass'], function () {
+	// gulp.watch('public/**/*.html', ['html']);
+	gulp.watch('public/**/*.scss', ['sass']);
+	// gulp.watch('public/**/*.css', ['css']);
+	// gulp.watch('public/**/*.js', ['js']);
+	// gulp.watch('public/**/images/*', ['img']);
 });

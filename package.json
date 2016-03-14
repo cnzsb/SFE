@@ -1,21 +1,21 @@
 {
-  "name": "SFE",
+  "name": "ifetask",
   "version": "1.0.0",
-  "description": "one of IFE teams",
+  "description": "ife tasks",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cnzsb/sfe.git"
+    "url": "git+https://github.com/cnzsb/ifetask.git"
   },
-  "author": "SFE Team",
+  "author": "cnzsb",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cnzsb/sfe/issues"
+    "url": "https://github.com/cnzsb/ifetask/issues"
   },
-  "homepage": "https://github.com/cnzsb/sfe#readme",
+  "homepage": "https://github.com/cnzsb/ifetask#readme",
   "devDependencies": {
     "browser-sync": "^2.11.1",
     "del": "^2.2.0",
