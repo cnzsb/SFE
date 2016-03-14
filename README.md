@@ -1,53 +1,31 @@
-# SFE
-——from IFE  
+## IFETASK
 
-## [项目分支管理规则](http://naotu.baidu.com/file/3e85f75bd0a3f5b7cb05e4500f7797c4?token=7ac3c65649be3119&qq-pf-to=pcqq.group)
+个人完成IFE（百度前端技术学院）的任务仓库。
 
-```
-master--gh-pages	# 队长来控制这2个分支
-|
-dev					# 默认分支，用来pull和push，队员从仓库clone此分支到本地。
-```
+## <a href="http://ife.baidu.com/task/all" target="_blank">IFE2016春季班任务</a>
 
-`git clone`到本地以后的所有该分支的操作需要使用`git fetch`进行抓取，然后使用`git diff`进行差异比较，如果需要合并使用`git merge`命令。
-在dev分支正确后，队员在本地创建另一个私人分支，该分支进行日常开发，开发完毕后`merge`到本地的dev分支，在`push`dev分支前进行`fetch`和`diff`操作进行比较，无版本冲突时方可进行`push`。
+### 第一阶段
 
-**说明**：本仓库仅用来管理团队项目，个人项目需要自行建立仓库进行开发，开发后的demo如须展示，会公开在团队页面。
+1. <a href="http://ife.baidu.com/task/detail?taskId=1" target="_blank">面向零基础的HTML代码编写</a>
 
-## 文件目录
+2. <a href="http://ife.baidu.com/task/detail?taskId=2" target="_blank">基于任务1的HTML代码，实现简单的CSS代码编写</a>
 
-```
-.
-├── dist       	  # 生成的静态网页文件，目标文件夹
-├── node_modules  # 插件
-├── src           # 原始开发文件夹，该目录下直接保存html文件
-|   ├── tmp      # 队员项目暂存目录，该目录下存放队员项目目录 
-|   |  ├── guo
-|   |  ├── tao
-|   |  ├── zhao
-|   |  └── zhou
-|   ├── css
-|   ├── images
-|   ├── js
-|   └── scss
-├── .gitignore
-├── gulpfile.js   # gulp配置文件
-├── index.html    # 团队首页
-├── LICENSE
-├── package.json
-└── README.md
-```
+3. <a href="http://ife.baidu.com/task/detail?taskId=3" target="_blank">HTML、CSS布局入门，三栏式布局的实践</a>
 
-## 任务
+4. <a href="http://ife.baidu.com/task/detail?taskId=4" target="_blank">HTML、CSS布局深入，定位和居中问题的实践</a>
 
-### 1. [IFE热身任务](http://ife.baidu.com/static/warmup.html):
+5. <a href="http://ife.baidu.com/task/detail?taskId=5" target="_blank">基于任务1的HTML代码，实现一个稍微复杂的CSS代码编写</a>
 
-本页面暂定如下[设计](http://naotu.baidu.com/file/26ca0b384bad39256348587b952f07bf?token=08bd973e79185fa8&qq-pf-to=pcqq.group)，详情等待讨论后确定。
+6. <a href="http://ife.baidu.com/task/detail?taskId=6" target="_blank">按照设计图，通过HTML/CSS实现一个像报纸杂志一样的页面布局排版</a>
 
-当前已有页面展示:
+7. <a href="http://ife.baidu.com/task/detail?taskId=7" target="_blank">按照设计图，通过HTML/CSS实现一个产品官网</a>
 
-1. [郭丽敏](http://zhaoshibo.net/sfe/dist/tmp/guo)
+8. <a href="http://ife.baidu.com/task/detail?taskId=8" target="_blank">网格/栅格化布局学习与实践</a>
 
-2. [陶群](http://zhaoshibo.net/sfe/dist/tmp/tao)
+9. <a href="http://ife.baidu.com/task/detail?taskId=9" target="_blank">按照设计图，通过HTML/CSS实现一个复杂的业务系统页面</a>
 
-3. [赵世博](http://zhaoshibo.net/sfe/dist/tmp/zhao)
+10. <a href="http://ife.baidu.com/task/detail?taskId=10" target="_blank">学习和练习Flex布局</a>
+
+11. <a href="http://ife.baidu.com/task/detail?taskId=11" target="_blank">移动Web开发入门，按照设计稿实现一个移动端的页面</a>
+
+12. <a href="http://ife.baidu.com/task/detail?taskId=12" target="_blank">CSS 3新特性的小练习</a>
