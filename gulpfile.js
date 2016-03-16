@@ -9,7 +9,7 @@ var gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     notify = require('gulp-notify'),
     // cache = require('gulp-cache'),
-    imagemin = require('gulp-imagemin'),    
+    // imagemin = require('gulp-imagemin'),    
     browserSync = require('browser-sync');
 
 gulp.task('sass', function () {
@@ -19,9 +19,8 @@ gulp.task('sass', function () {
 		.pipe(notify({message: 'Sass done!'}));
 });
 
-// 默认生成所有文件
-// gulp.task('default', ['html', 'sass', 'css', 'js', 'img']);
-gulp.task('default', ['sass']);
+// 默认监控任务
+gulp.task('default', ['refresh']);
 
 // 监听所有文件并实时生成和预览
 gulp.task('refresh', ['sass'], function () {

@@ -37,7 +37,7 @@ ul, ol {
 }
 /* ie6/7 */
 .clearfix {
-    zoom: 1;
+    *zoom: 1;
 }
 .clear {
     clear: both;
@@ -55,6 +55,5 @@ a img {
 	border: none;
 }
 body, a {
-	font-family: "Century Gothic",CenturyGothic,AppleGothic,sans-serif;
-	letter-spacing: 2px;
+	font-family: "Microsoft Yahei",sans-serif;
 }
