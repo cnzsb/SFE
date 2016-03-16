@@ -1,0 +1,242 @@
+body {
+	font-size: 12px;
+	min-width: 1280px;
+}
+
+/* 居中固定尺寸容器 */
+.wrapper {
+	width: 1280px;
+	margin: 0 auto;
+}
+
+/* 短分隔符，白色深色 */
+.divide-light {
+	display: block;
+	width: 31px;
+	height: 2px;
+	background-color: #fff;
+	margin: 0 auto;
+}
+
+.divide-dark {
+	display: block;
+	width: 31px;
+	height: 2px;
+	background-color: #ABAAAA;
+	margin: 0 auto;
+}
+
+/* header start */
+.header {
+	height: 56px;
+	margin: 0 auto;
+	font-size: 14px;
+	text-align: center;
+	box-shadow: 0 1px 3px #EDEDEC;
+}
+
+.logo {
+	font: 21px "黑体";
+	line-height: 56px;
+	margin-left: 59px;
+	background: url(../images/logo.png) left center no-repeat;
+	padding-left: 41px;
+	cursor: pointer;
+}
+
+.nav li {
+	display: inline-block;
+}
+
+.nav a {
+	display: block;
+	color: #767777;
+	line-height: 52px;
+	padding: 0 21px;
+}
+
+.nav li a.on, .nav li a:hover {
+	color: #e74f4d;
+	border-bottom: 4px solid #e74f4d;
+}
+
+.nav .login {
+	margin: 0 47px 0 10px;
+	color: #e74f4d;
+	background: url(../images/icon_login.png) left center no-repeat;
+}
+/* header end */
+
+
+/* main start */
+.main {
+	margin: 0 auto;
+	position: relative;
+}
+
+.banner {
+	height: 690px;
+	background: url(../images/main_bg.jpg) center top no-repeat;
+	background-size: cover;	
+	color: #fff;
+}
+
+.banner h2 {
+	font-size: 60px;
+	font-weight: normal;
+	padding: 230px 0 30px 116px;
+}
+
+.banner p {
+	font-size: 21px;
+	line-height: 37px;
+	padding-left: 124px;
+}
+
+.banner .begin {
+	display: block;
+	width: 330px;
+	font-size: 30px;
+	color: #fff;
+	padding: 17px 0 19px;
+	margin-top: 58px;
+	margin-left: 126px;
+	text-align: center;
+	background-color: #E74F4D;
+}
+
+.slogan {
+	height: 250px;
+	padding-left: 3px;
+}
+
+.slogan li {
+	display: inline-block;
+}
+
+.slogan li span {
+	display: block;
+	width: 42px;
+	height: 42px;
+	margin: 45px auto;
+}
+
+.slogan-icon1 {
+	background: url(../images/icon_circle.png) center center no-repeat;
+}
+
+.slogan-icon2 {
+	background: url(../images/icon_flag.png) center center no-repeat;
+}
+
+.slogan-icon3 {
+	background: url(../images/icon_flower.png) center center no-repeat;
+}
+
+.slogan-icon4 {
+	background: url(../images/icon_rect.png) center center no-repeat;
+}
+
+.slogan li div {
+	font-size: 14px;
+	line-height: 18px;
+	text-align: center;
+	color: #767777;
+	width: 154px;
+	margin: 0 auto;
+	border-left: 2px solid #767777;
+	padding: 0 80px;
+}
+
+.slogan li:first-child div {
+	border-left: none;
+}
+
+.question {
+	height: 360px;
+	margin: 0 auto;
+	background-color: #EDEDEC;
+	position: relative;
+}
+
+.question span {
+	display: block;
+	width: 92px;
+	height: 92px;
+	padding-top: 89px;
+	margin: 0 auto;
+	background: url(../images/logo_big.png) center bottom no-repeat;
+}
+
+.question p {
+	font: 54px/57px "黑体",sans-serif;
+	text-align: center;
+	color: #323333;
+	opacity: .5;
+	filter: alpha(opacity = 50);
+	margin-top: 48px;
+}
+
+.region {
+	height: 340px;
+	background: url(../images/region.jpg) center center no-repeat;
+	background-size: cover;
+}
+
+.region h2 {
+	font-size: 21px;
+	font-weight: normal;
+	padding: 53px 0 10px;
+	text-align: center;
+	color: #fff;
+}
+
+.region p {
+	font-size: 12px;
+	padding-top: 19px;
+	text-align: center;
+	color: #fff;
+}
+
+.region-select {
+	margin-top: 53px;
+	margin-left: 126px;
+}
+
+.region-select li {
+	display: inline-block;
+	position: relative;
+	margin-right: 29px;
+}
+
+.region-select li input {
+	width: 235px;
+	height: 35px;
+	padding-left: 12px;
+	border: none;	
+}
+
+.select-arrow {
+	width: 35px;
+	height: 35px;
+	background: url(../images/icon_select.png) center center no-repeat;
+	position: absolute;
+	top: 50%;
+	margin-top: -17px;
+	right: 0;
+	cursor: pointer;
+}
+
+.region-select .search {
+	width: 211px;
+	height: 35px;
+	display: block;
+	text-align: center;
+	color: #fff;
+	font-size: 14px;
+	line-height: 35px;
+	letter-spacing: 24px;
+	padding-left: 24px;
+	background-color: #BE4E48;
+}
+/* main end */
