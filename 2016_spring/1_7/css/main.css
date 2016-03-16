@@ -105,6 +105,11 @@ body {
 	background-color: #E74F4D;
 }
 
+.banner .begin:hover {
+	opacity: .9;
+	filter: alpha(opacity = 90);
+}
+
 .slogan {
 	height: 250px;
 	padding-left: 3px;
@@ -171,9 +176,7 @@ body {
 .question p {
 	font: 54px/57px "黑体",sans-serif;
 	text-align: center;
-	color: #323333;
-	opacity: .5;
-	filter: alpha(opacity = 50);
+	color: rgba(50, 50, 51, 0.5);
 	margin-top: 48px;
 }
 
@@ -198,25 +201,26 @@ body {
 	color: #fff;
 }
 
-.region-select {
+.region-select-container {
 	margin-top: 53px;
 	margin-left: 126px;
 }
 
-.region-select li {
+.region-select-container > li {
 	display: inline-block;
 	position: relative;
 	margin-right: 29px;
+	border: 1px solid rgba(255, 255, 255, 0);
 }
 
-.region-select li input {
+.region-select input {
 	width: 235px;
 	height: 35px;
 	padding-left: 12px;
 	border: none;	
 }
 
-.select-arrow {
+.region-select .select-arrow {
 	width: 35px;
 	height: 35px;
 	background: url(../images/icon_select.png) center center no-repeat;
@@ -227,7 +231,59 @@ body {
 	cursor: pointer;
 }
 
-.region-select .search {
+.region-slide {
+	display: none;
+	position: absolute;
+	width: 247px;
+	top: 35px;
+	left: -1px;
+	border: 1px solid #BE4E48;
+	border-top: none;
+	background-color: #E3E3E4;
+
+}
+
+.region-slide > li {
+	width: 216px;
+	height: 26px;
+	line-height: 26px;
+	color: rgba(50, 50, 51, 0.7);
+	position: relative;
+	padding-left: 31px;
+	cursor: pointer;
+}
+
+/* region-slide 选中状态下对勾 */
+.select-ok {
+	display: none;
+	width: 12px;
+	height: 8px;
+	background: url(../images/icon_ok.png);
+	position: absolute;
+	top: 9px;
+	left: 8px;
+}
+
+/* region-slide 暂用hover显示，hover 时状态*/
+.region-select:hover {
+	border: 1px solid #BE4E48;
+}
+
+.region-select:hover .region-slide {
+	display: block;
+}
+
+/* region-slide hover 状态 */
+.region-slide > li:hover {
+	color: #fff;
+	background-color: #BE4E48;
+}
+
+.region-slide > li:hover .select-ok {
+	display: block;
+}
+
+.region-select-container .search {
 	width: 211px;
 	height: 35px;
 	display: block;
@@ -239,4 +295,10 @@ body {
 	padding-left: 24px;
 	background-color: #BE4E48;
 }
+
+.region-select-container .search:hover {
+	opacity: .9;
+	filter: alpha(opacity = 90);
+}
+
 /* main end */
