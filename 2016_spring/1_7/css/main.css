@@ -42,7 +42,7 @@ body {
 }
 
 .logo {
-    font: 21px "黑体", "Microsoft Yahei", sans-serif;
+    font: 21px "黑体", "Microsoft YaHei", sans-serif;
     line-height: 56px;
     margin-left: 59px;
     background: url(../images/logo.png) left center no-repeat;
@@ -184,7 +184,7 @@ body {
 }
 
 .question p {
-    font: 54px/57px "黑体", "Microsoft Yahei", sans-serif;
+    font: 54px/57px "黑体", "Microsoft YaHei", sans-serif;
     text-align: center;
     color: rgba(50, 50, 51, 0.5);
     margin-top: 48px;
@@ -382,7 +382,7 @@ body {
 
 .about-us-1-info h2 {
     margin-top: 165px;
-    font: normal 21px "黑体", "Microsoft Yahei", sans-serif;
+    font: normal 21px "黑体", "Microsoft YaHei", sans-serif;
     color: #323333;
 }
 
@@ -458,7 +458,7 @@ body {
 
 .about-us-2>div h2,
 .about-us-2>div p {
-    font: normal 21px/30px "黑体", "Microsoft Yahei", sans-serif;
+    font: normal 21px/30px "黑体", "Microsoft YaHei", sans-serif;
 }
 
 .about-us-2>div h2 {
@@ -473,7 +473,7 @@ body {
     display: block;
     width: 169px;
     margin: 25px auto 0;
-    font: normal 21px/43px "黑体", "Microsoft Yahei", sans-serif;
+    font: normal 21px/43px "黑体", "Microsoft YaHei", sans-serif;
 }
 
 .about-us-2-l {
@@ -528,7 +528,7 @@ body {
 }
 
 .join dl dt {
-    font-family: "黑体", "Microsoft Yahei", sans-serif;
+    font-family: "黑体", "Microsoft YaHei", sans-serif;
 }
 
 .join-info {
@@ -629,7 +629,7 @@ body {
 }
 
 .join-form #usersubmit {
-    font: 14px "黑体", "Microsoft Yahei", sans-serif;
+    font: 14px "黑体", "Microsoft YaHei", sans-serif;
     color: #323333;
     border: none;
     background-color: #fff;
@@ -644,7 +644,7 @@ body {
 }
 
 .contact h2 {
-    font: normal 21px/48px "黑体", "Microsoft Yahei", sans-serif;
+    font: normal 21px/48px "黑体", "Microsoft YaHei", sans-serif;
     padding-top: 92px;
 }
 
@@ -678,7 +678,7 @@ body {
     top: 0;
     right: 0;
     background-color: #686166;
-    font: 15px/40px "Microsoft Yahei", sans-serif;
+    font: 15px/40px "Microsoft YaHei", sans-serif;
     cursor: pointer;
     letter-spacing: 8px;
 }
