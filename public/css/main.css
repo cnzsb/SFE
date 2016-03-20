@@ -23,12 +23,13 @@ body {	background-color: #E9FCFF;}
 
 /* header start */
 #header {
+	display: block;
 	height: 39px;
 	text-align: right;
 	border-bottom: 1px solid #ccc;
 }
 #header a {
-	font-size: 24px;
+	font-size: 18px;
 	line-height: 40px;
 	padding: 0 10px;
 	color: #09A8FF;
@@ -45,8 +46,8 @@ body {	background-color: #E9FCFF;}
 	background-size: 30px 30px;
 	cursor: pointer;
 }
-#header .nav {
-	margin-top: -5px;
+#header-m {
+	display: none;
 }
 
 /* header end */
@@ -58,15 +59,19 @@ body {	background-color: #E9FCFF;}
 }
 
 .main-title {
-	font-size: 40px;
+	font-size: 18px;
 	font-weight: normal;
-	line-height: 80px;
+	line-height: 1.4em;
+	text-align: left;
+	padding-left: 5%;
+	color: #19caad;
+	text-shadow: 2px 2px 2px #AEA2A2;
 }
 
 /* 每期任务 */
 .task {
-	margin-top: 20px;
-	padding: 20px 0;
+	margin-bottom: 20px;
+	padding: 10px 0;
 	border-top: 1px dashed #ccc;
 	border-bottom: 1px dashed #ccc;
 }
