@@ -1,0 +1,115 @@
+/**
+ * @authors cnzsb
+ * @email   cnzsb@foxmail.com
+ * @date    2016-03-20 20:50:02
+ */
+body {
+	width: 95%;
+	margin: 0 auto;
+	background-color: #E9FCFF;
+	letter-spacing: normal;
+}
+
+a {
+	display: inline-block;
+	color: #09A8FF;
+}
+a:visited {
+	color: #0490A5;
+}
+
+/* header start */
+#header {
+	display: none;
+}
+#header-m {
+	display: block;
+	border-bottom: 2px solid #ccc;
+}
+#header-m .main-title-m {
+	text-align: right;
+	font-size: 18px;
+	line-height: 1.5em;
+	color: #19CAAD;
+	text-shadow: 2px 2px 2px #AEA2A2 ;
+}
+#header-m .avatar-m {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	margin: 0 auto;
+	background: url(http://www.zhaoshibo.net/avatar.jpg) center center no-repeat;
+	background-size: 100px 100px;
+}
+#header-m .nav-m {
+	padding-top: 20px;
+	text-align: center;
+}
+
+#header-m .nav-m li {
+	display: inline-block;
+}
+
+#header-m .nav-m li a {
+	font-size: 18px;
+	padding: 0 8px;
+	line-height: 1.8em;
+}
+
+/* header end */
+
+.main-wrapper {
+	width: 100%;
+	text-align: center;
+	padding: 0;
+}
+
+.main-title {
+	display: none;
+	padding-top: 20px;
+	font-size: 26px;
+	font-weight: normal;
+	line-height: 1.2em;
+}
+
+/* 每期任务 */
+.task {
+	margin: 0;
+	padding: 10px 0;
+	border-top: none;
+	border-bottom: 2px dashed #ccc;
+}
+
+/* 每期任务主标题 */
+.task-main-title {
+	font-size: 22px;
+	font-weight: normal;
+	line-height: 1.2em;
+	border-bottom: 1px solid #ccc;
+	padding: 10px 0;
+}
+
+/* 当期任务下的阶段 */
+.task-section {
+	width: 90%;
+	padding: 10px 0 0px;
+	font-size: 14px;
+	text-align: left;
+}
+
+/* 当前阶段标题 */
+.task-section li:first-child {
+	font-size: 16px;
+	padding-bottom: 0;
+}
+
+/* 当前阶段任务展示 */
+.task-section li {
+	line-height: 1.5em;
+}
+
+.task-section li a {
+	font-weight: bold;
+	text-decoration: underline;
+	padding: 0 5px;
+}
