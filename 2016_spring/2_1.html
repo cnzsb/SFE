@@ -14,12 +14,12 @@
 		var aqiInput = document.getElementById('aqi-input'),
 			aqiDisplay = document.getElementById('aqi-display'),
 			button = document.getElementById('button');
-		button.addEventListener('click', function () {
+		button.onclick = function () {
 			if (aqiInput.value != '') {
 				aqiDisplay.innerHTML = aqiInput.value;
 				aqiInput.value = '';
 			}
-		});
+		};
 	})();
 	</script>
 </body>
