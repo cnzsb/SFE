@@ -10,6 +10,16 @@ body {
 	letter-spacing: normal;
 }
 
+/* 鼠标选择颜色 */
+::selection {
+    color: #FFF;
+    background-color: #19caad;
+}
+::-moz-selection {
+    color: #FFF;
+    background-color: #19caad;
+}
+
 a {
 	display: inline-block;
 	color: #09A8FF;
@@ -23,7 +33,6 @@ a:visited {
 	display: none;
 }
 #header-m {
-	display: block;
 	border-bottom: 2px solid #ccc;
 }
 #header-m .main-title-m {
@@ -59,24 +68,16 @@ a:visited {
 /* header end */
 
 .main-wrapper {
-	width: 100%;
 	text-align: center;
-	padding: 0;
 }
 
 .main-title {
 	display: none;
-	padding-top: 20px;
-	font-size: 26px;
-	font-weight: normal;
-	line-height: 1.2em;
 }
 
 /* 每期任务 */
 .task {
-	margin: 0;
 	padding: 10px 0;
-	border-top: none;
 	border-bottom: 2px dashed #ccc;
 }
 
@@ -92,7 +93,7 @@ a:visited {
 /* 当期任务下的阶段 */
 .task-section {
 	width: 90%;
-	padding: 10px 0 0px;
+	padding: 10px 0 0 20px;
 	font-size: 14px;
 	text-align: left;
 }
@@ -100,12 +101,21 @@ a:visited {
 /* 当前阶段标题 */
 .task-section li:first-child {
 	font-size: 16px;
-	padding-bottom: 0;
+	/* 通用效果 */
+	list-style-type: circle;
+	/* FF效果 */
+	list-style-type: disclosure-open;
+	list-style-position: outside;
 }
 
 /* 当前阶段任务展示 */
 .task-section li {
 	line-height: 1.5em;
+	/* 通用效果 */
+	list-style-type: disc;
+	/* FF效果 */
+	list-style-type: disclosure-closed;
+	list-style-position: inside;
 }
 
 .task-section li a {

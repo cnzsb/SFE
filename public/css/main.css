@@ -97,11 +97,21 @@ body {	background-color: #E9FCFF;}
 .task-section li:first-child {
 	font-size: 24px;
 	padding-bottom: 10px;
+	/* 通用效果 */
+	list-style-type: circle;
+	/* FF效果 */
+	list-style-type: disclosure-open;
+	list-style-position: outside;
 }
 
 /* 当前阶段任务展示 */
 .task-section li {
-	line-height: 30px;
+	line-height: 30px;	
+	/* 通用效果 */
+	list-style-type: disc;
+	/* FF效果 */
+	list-style-type: disclosure-closed;
+	list-style-position: inside;
 }
 
 .task-section li a {
