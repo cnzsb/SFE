@@ -14,11 +14,17 @@
 		var aqiInput = document.getElementById('aqi-input'),
 			aqiDisplay = document.getElementById('aqi-display'),
 			button = document.getElementById('button');
+		// 为空不操作
 		button.onclick = function () {
 			if (aqiInput.value != '') {
-				aqiDisplay.innerHTML = aqiInput.value;
+				aqiDisplay.innerHTML = aqiInput.value.trim();
 				aqiInput.value = '';
 			}
+		};
+
+		// 去掉前后空格，兼容低版本IE
+		String.prototype.trim = function () {
+			return this.replace(/(^\s*)|(\s*$)/g, '');
 		};
 	})();
 	</script>
