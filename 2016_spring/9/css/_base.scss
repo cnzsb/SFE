@@ -1,0 +1,42 @@
+body {
+	font-size: 12px;
+	min-width: 1280px;
+}
+
+// color
+
+$header-color: #2189BF;
+$sidebar-color: #2A2E3D;
+$content-color: #EEEEED;
+$btn-color: #2189BF;
+
+// font-family
+
+$font-ht: "黑体";
+$font-st: "宋体";
+
+/* icon */
+
+.icon-folder-main {
+	list-style-image: url(../images/icon_folder_main.png);
+}
+
+.icon-folder {
+	list-style-image: url(../images/icon_folder.png);
+}
+
+.icon-file {
+	list-style-image: url(../images/icon_file.png);
+}
+
+.icon-star {
+	list-style-image: url(../images/icon_star.png);
+}
+
+.icon-anchor {
+	list-style-image: url(../images/icon_anchor.png);
+}
+
+.icon-account {
+	list-style-image: url(../images/icon_account.png);
+}
