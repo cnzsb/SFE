@@ -13,9 +13,9 @@ var gulp = require('gulp'),
     browserSync = require('browser-sync');
 
 gulp.task('sass', function () {
-	return sass('2016_spring/scss/*.scss', {base: 'src'}, {style: 'expanded'})
+	return sass('2016_spring/**/*.scss', {style: 'expanded'})
 		.pipe(autoprefixer('last 2 version', 'ie >= 7'))
-		.pipe(gulp.dest('2016_spring/css'))
+		.pipe(gulp.dest('2016_spring/'))
 		.pipe(notify({message: 'Sass done!'}));
 });
 
@@ -37,18 +37,10 @@ gulp.task('refresh', ['sass'], function () {
 		}
 	});
 
-	// gulp.watch('2016_spring/**/*.html', ['html']);
 	gulp.watch('2016_spring/**/*.scss', ['sass']);
-	// gulp.watch('2016_spring/**/*.css', ['css']);
-	// gulp.watch('2016_spring/**/*.js', ['js']);
-	// gulp.watch('2016_spring/**/images/*', ['img']);
 });
 
 // 监听所有文件并实时生成
 gulp.task('watch', ['sass'], function () {
-	// gulp.watch('2016_spring/**/*.html', ['html']);
 	gulp.watch('2016_spring/**/*.scss', ['sass']);
-	// gulp.watch('2016_spring/**/*.css', ['css']);
-	// gulp.watch('2016_spring/**/*.js', ['js']);
-	// gulp.watch('2016_spring/**/images/*', ['img']);
 });
