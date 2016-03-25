@@ -40,3 +40,13 @@ $font-st: "宋体";
 .icon-account {
 	list-style-image: url(../images/icon_account.png);
 }
+.icon-catalog-arrow {
+	float: left;
+	width: 11px;
+	height: 11px;
+	background: url(../images/icon_folder_state.png) left center no-repeat;
+	transform: rotateZ(-90deg);
+	margin-top: 7px;
+	margin-right: 7px;
+	transition: all .25s ease-out;
+}
