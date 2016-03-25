@@ -14,7 +14,9 @@ var gulp = require('gulp'),
 
 gulp.task('sass', function () {
 	return sass('2016_spring/**/*.scss', {style: 'expanded'})
-		.pipe(autoprefixer('last 2 version', 'ie >= 7'))
+		.pipe(autoprefixer({
+			browsers: ['last 2 version', 'ie >= 7']
+		}))
 		.pipe(gulp.dest('2016_spring/'))
 		.pipe(notify({message: 'Sass done!'}));
 });
