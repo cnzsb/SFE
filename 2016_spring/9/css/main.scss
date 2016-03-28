@@ -5,6 +5,7 @@
 */
 
 .header {
+	min-width: 1280px;
 	height: 54px;
 	background-color: $header-color;
 
@@ -61,7 +62,8 @@
 */
 
 .container {
-	min-width: 1280px;
+	width: 1280px;
+	margin: 0 auto;
 	position: absolute;
 	top: 54px;
 	right: 0;
@@ -107,6 +109,7 @@
 		.username {
 			padding-left: 19px;
 			line-height: 56px;
+			color: #FFF;
 		}
 
 		.usersocial {
@@ -136,9 +139,12 @@
 		bottom: 0;
 		left: 0;
 		right: 0;
-		padding-left: 46px;
 		overflow: auto;
 		word-break: keep-all;
+
+		> li {
+			padding-left: 46px;
+		}
 
 		li {
 			cursor: pointer;
@@ -152,6 +158,7 @@
 			&.on,
 			&:hover {
 				color: #FFF;
+				background-color: #383D4E;
 				opacity: 1;
 				filter: alpha(opacity = 100);
 			}
@@ -194,19 +201,24 @@
 	font-family: $font-ht;
 	line-height: 30px;
 	color: #AAA;
+	background-color: #FFF;
 
 	dt,
 	dd {
-		float: left;			
+		float: left;
+
+		a {
+			color: #AAA;
+		}
+
+		&.current a {
+			color: #6898c2;
+		}
 	}
 
 	dd::before {
 		content: "/";
 		padding: 0 7px;
-	}
-
-	.current {
-		color: #6898c2;
 	}
 }
 
@@ -216,6 +228,64 @@
 
 .content {
 	height: 100%;
-	background-color: $content-color;
 	position: relative;
+	padding-top: 19px;
+}
+
+.query-info {
+	height: 54px;
+	background-color: #FFF;
+	margin: 0 70px 0 60px;
+	color: #AAA;
+	font-family: $font-ht;
+	line-height: 26px;
+	padding: 15px 31px;
+	box-shadow: 0 0 1px $border-color;
+
+	.query-box select {
+		width: 80px;
+		margin-left: 15px;
+	}
+
+	.query-users {
+		margin-left: 36px;
+		position: relative;
+
+		> div:nth-child(even) {
+			margin-top: 4px;
+		}
+
+		select {
+			width: 120px;
+		}
+	}
+
+	.query-time {
+		margin-left: 45px;
+
+		> div:nth-child(even) {
+			margin-top: 4px;
+		}
+
+		label,
+		span {
+			padding-left: 14px;
+			padding-right: 16px;
+		}
+
+		select {
+			&.query-time-short {
+				width: 80px;
+			}
+
+			&.query-time-long {
+				width: 122px;
+			}
+		}
+	}
+
+	a.bt-default {
+		margin-left: 28px;
+		margin-top: 15px;
+	}
 }

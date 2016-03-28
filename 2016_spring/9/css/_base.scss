@@ -1,19 +1,21 @@
-body {
-	font-size: 12px;
-	min-width: 1280px;
-}
-
 // color
 
 $header-color: #2189BF;
 $sidebar-color: #2A2E3D;
-$content-color: #EEEEED;
+$main-color: #EEEEED;
 $btn-color: #2189BF;
+$border-color: #AAA;
 
 // font-family
 
 $font-ht: "黑体";
 $font-st: "宋体";
+
+
+body {
+	font-size: 12px;
+	background-color: $main-color;
+}
 
 /* icon */
 
@@ -49,4 +51,73 @@ $font-st: "宋体";
 	margin-top: 7px;
 	margin-right: 7px;
 	transition: all .25s ease-out;
+}
+
+/* select-default */
+
+.sl-default {
+	height: 26px;
+	line-height: 26px;
+	appearance: none;
+	background: url("../images/icon_select.png") 95% center no-repeat;
+	padding-right: 18px;
+	padding-left: 8px;
+	border: 1px solid #AAA;
+	cursor: pointer;
+
+	&:focus {
+		background: url("../images/icon_select_selected.png") 95% center no-repeat;
+	}
+
+	/* ie */
+	&::-ms-expand {
+		display: none;
+	}
+}
+
+/* input-default */
+
+.ip-default {
+	width: 96px;
+	height: 26px;
+	line-height: 26px;
+	border: 1px solid #AAA;
+	padding: 0 12px;
+}
+
+/* button-default */
+
+.bt-default {
+	display: block;
+	width: 50px;
+	height: 26px;
+	text-align: center;
+	font: 12px/26px $font-ht;
+	color: #FFF;
+	background-color: $btn-color;
+	border-radius: 2px;
+	cursor: pointer;
+
+	&:hover {
+		opacity: .8;
+		filter: alpha(opacity = 80);
+	}
+}
+
+/* 交换图标 */
+.exchange {
+	display: block;
+	width: 28px;
+	height: 38px;
+	background: url("../images/icon_exchange.png") center center no-repeat;
+	position: absolute;
+	top: 9px;
+	right: -30px;
+	text-align: center;
+
+	a {
+		color: #FFF;
+		position: absolute;
+		top: 5px;
+	}
 }

@@ -33,7 +33,7 @@
 					<div class="avatar-wrapper fl">
 						<span class="avatar"></span>
 					</div>
-					<span class="username fl">cnzsb</span>
+					<a class="username fl" href="javascript:;">cnzsb</a>
 				</div>
 				<div class="usersocial clearfix">
 					<div class="starred fl">
@@ -82,14 +82,62 @@
 		<!-- content-wrapper start -->
 		<div class="content-wrapper">
             <dl class="content-indexbar">
-                <dt>C站</dt>
-                <dd>个人报表</dd>
-                <dd>文件一</dd>
-                <dd class="current">文档一</dd>
+                <dt><a href="javascript:;">C站</a></dt>
+                <dd><a href="javascript:;">个人报表</a></dd>
+                <dd><a href="javascript:;">文件一</a></dd>
+                <dd class="current"><a href="javascript:;">文档一</a></dd>
             </dl>
             <!-- content start -->
             <div class="content">
-                
+                <div class="query-info">
+                    <div class="query-box fl">
+                        <span>查询项</span>
+                        <select class="sl-default">
+                            <option>第一项</option>
+                            <option>第二项</option>
+                            <option>第三项</option>
+                        </select>
+                    </div>
+
+                    <div class="query-users fl">
+                        <div class="buyer">
+                            <span>买方</span>
+                            <select class="sl-default">
+                                <option>小A</option>
+                                <option>小B</option>
+                            </select>
+                        </div>
+                        <div class="seller">
+                            <span>卖方</span>
+                            <select class="sl-default">
+                                <option>小C</option>
+                                <option>小D</option>
+                            </select>
+                        </div>
+                        <div class="exchange"><a href="javascript:;">换</a></div>
+                    </div>
+                    <div class="query-time fl">
+                        <div>
+                            <label for="query-time-date">日期</label for="">
+                            <input id="query-time-date" class="ip-default" type="text" placeholder="2016-04-01"></input>
+                            <span>总耗时</span>
+                            <select class="sl-default query-time-short">
+                                <option value="">8 天</option>
+                            </select>
+                        </div>
+                        <div>
+                            <span>人数</span>
+                            <select class="sl-default query-time-short">
+                                <option value="">10 人</option>
+                            </select>
+                            <span>成交项</span>
+                            <select class="sl-default query-time-long">
+                                <option value="">10 项</option>
+                            </select>
+                        </div>
+                    </div>
+                    <a class="bt-default fr" href="javascript:;">搜索</a>
+                </div>
             </div>
             <!-- content end -->
         </div>
