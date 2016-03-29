@@ -20,37 +20,49 @@ body {
 /* icon */
 
 .icon-folder-main {
-	list-style-image: url(../images/icon_folder_main.png);
+	list-style-image: url("../images/icon_folder_main.png");
 }
 
 .icon-folder {
-	list-style-image: url(../images/icon_folder.png);
+	list-style-image: url("../images/icon_folder.png");
 }
 
 .icon-file {
-	list-style-image: url(../images/icon_file.png);
+	list-style-image: url("../images/icon_file.png");
 }
 
 .icon-star {
-	list-style-image: url(../images/icon_star.png);
+	list-style-image: url("../images/icon_star.png");
 }
 
 .icon-anchor {
-	list-style-image: url(../images/icon_anchor.png);
+	list-style-image: url("../images/icon_anchor.png");
 }
 
 .icon-account {
-	list-style-image: url(../images/icon_account.png);
+	list-style-image: url("../images/icon_account.png");
 }
 .icon-catalog-arrow {
 	float: left;
 	width: 11px;
 	height: 11px;
-	background: url(../images/icon_folder_state.png) left center no-repeat;
+	background: url("../images/icon_folder_state.png") left center no-repeat;
 	transform: rotateZ(-90deg);
 	margin-top: 7px;
 	margin-right: 7px;
 	transition: all .25s ease-out;
+}
+.icon-arrow-left {
+	background: url("../images/icon_arrow_left.png") center center no-repeat;
+}
+.icon-arrow-right {
+	background: url("../images/icon_arrow_right.png") center center no-repeat;
+}
+.icon-rmb {
+	background: url('../images/icon_rmb.png') left center no-repeat;
+}
+.icon-calendar {
+	background: url("../images/icon_calendar.png") center center no-repeat;
 }
 
 /* select-default */
@@ -119,5 +131,22 @@ body {
 		color: #FFF;
 		position: absolute;
 		top: 5px;
+	}
+}
+
+/* 区域与标题样式 */
+.section {	
+	background-color: #FFF;
+	border-radius: 8px;
+	box-shadow: 0 0 1px $border-color;
+	overflow: hidden;
+
+	.title {
+		height: 40px;
+		font: 12px/41px $font-ht;
+		color: #AAA;
+		background-color: #F3F5F6;
+		border-bottom: 1px solid #E7E8EB;
+		padding-left: 21px;
 	}
 }
