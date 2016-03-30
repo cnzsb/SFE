@@ -163,6 +163,24 @@ body {
   cursor: default;
 }
 
+/* 数据条 */
+.data-stick {
+  display: inline-block;
+  width: 167px;
+  height: 4px;
+  background-color: #DCDCDC;
+  border-radius: 2px;
+  position: relative;
+}
+.data-stick span {
+  display: inline-block;
+  height: 4px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 2px;
+}
+
 /* 
 	header start
 */
@@ -753,4 +771,83 @@ body {
   width: 530px;
   height: 356px;
   margin-left: 9px;
+}
+.content-end .brand-rank table {
+  margin-top: 17px;
+  margin-left: 40px;
+  border-collapse: collapse;
+}
+.content-end .brand-rank table tr {
+  cursor: pointer;
+}
+.content-end .brand-rank table tr:hover {
+  background-color: #F4F5F6;
+}
+.content-end .brand-rank table tr th,
+.content-end .brand-rank table tr td {
+  height: 25px;
+  border: 1px solid #CBCBCB;
+  text-align: center;
+  font-family: "黑体";
+}
+.content-end .brand-rank table tr th {
+  font-size: 13px;
+  color: #231815;
+}
+.content-end .brand-rank table tr td {
+  color: #323333;
+}
+.content-end .brand-rank table tr th:nth-child(1),
+.content-end .brand-rank table tr td:nth-child(1) {
+  width: 66px;
+}
+.content-end .brand-rank table tr th:nth-child(2),
+.content-end .brand-rank table tr td:nth-child(2) {
+  width: 89px;
+}
+.content-end .brand-rank table tr th:nth-child(3),
+.content-end .brand-rank table tr td:nth-child(3) {
+  width: 259px;
+  text-align: left;
+  padding-left: 34px;
+}
+.content-end .brand-rank table tr .data-stick {
+  margin-left: 22px;
+  margin-bottom: 2px;
+}
+.content-end .brand-rank table tr .data-stick span {
+  background-color: #7FCBF0;
+}
+.content-end .brand-rank table tr:nth-child(2) .data-stick span {
+  width: 136.1384px;
+  background-color: #EC6D51;
+}
+.content-end .brand-rank table tr:nth-child(3) .data-stick span {
+  width: 81.57208px;
+  background-color: #EC6D51;
+}
+.content-end .brand-rank table tr:nth-child(4) .data-stick span {
+  width: 64.40374px;
+  background-color: #EC6D51;
+}
+.content-end .brand-rank table tr:nth-child(5) .data-stick span {
+  width: 63.69815px;
+}
+.content-end .brand-rank table tr:nth-child(6) .data-stick span {
+  width: 62.13734px;
+}
+.content-end .brand-rank table tr:nth-child(7) .data-stick span {
+  width: 59.68601px;
+}
+.content-end .brand-rank table tr:nth-child(8) .data-stick span {
+  width: 55.98666px;
+}
+.content-end .brand-rank table tr:nth-child(9) .data-stick span {
+  width: 53.58384px;
+}
+.content-end .brand-rank table tr:nth-child(10) .data-stick span {
+  width: 53.3644px;
+}
+.content-end .brand-rank table tr:nth-child(11) .data-stick span {
+  width: 51.61421px;
 }

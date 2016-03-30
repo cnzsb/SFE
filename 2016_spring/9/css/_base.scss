@@ -11,6 +11,10 @@ $border-color: #AAA;
 $font-ht: "黑体";
 $font-st: "宋体";
 
+// 数据条
+$data-stick-w: 167px;
+$data: 60000000;
+
 
 body {
 	font-size: 12px;
@@ -173,5 +177,24 @@ body {
 		border-bottom: 1px solid #E7E8EB;
 		padding-left: 21px;
 		cursor: default;
+	}
+}
+
+/* 数据条 */
+.data-stick {
+	display: inline-block;
+	width: $data-stick-w;
+	height: 4px;
+	background-color: #DCDCDC;
+	border-radius: 2px;
+	position: relative;
+
+	span {
+		display: inline-block;
+		height: 4px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		border-radius: 2px;
 	}
 }
