@@ -61,7 +61,6 @@ body {
 /* select-default */
 .sl-default {
   height: 26px;
-  line-height: 26px;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -70,12 +69,37 @@ body {
   padding-left: 8px;
   border: 1px solid #AAA;
   cursor: pointer;
+  font: 12px/26px "黑体";
+  color: #323333;
   /* ie */
 }
 .sl-default:focus {
   background: url("../images/icon_select_selected.png") 95% center no-repeat;
 }
 .sl-default::-ms-expand {
+  display: none;
+}
+
+.sl-sm {
+  width: 75px;
+  height: 22px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: url("../images/icon_select_sm.png") right center no-repeat;
+  border: 1px solid #AAA;
+  cursor: pointer;
+  padding-left: 2px;
+  padding-right: 20px;
+  font: 12px/22px "黑体";
+  color: #535353;
+  text-align: center;
+  /* ie */
+}
+.sl-sm:focus {
+  box-shadow: 0 0 1px #AAA;
+}
+.sl-sm::-ms-expand {
   display: none;
 }
 
@@ -136,6 +160,7 @@ body {
   background-color: #F3F5F6;
   border-bottom: 1px solid #E7E8EB;
   padding-left: 21px;
+  cursor: default;
 }
 
 /* 
@@ -245,6 +270,7 @@ body {
 .sidebar .userinfo .usersocial {
   padding-top: 23px;
   color: #6e8095;
+  cursor: default;
 }
 .sidebar .userinfo .usersocial .starred {
   padding-right: 30px;
@@ -356,6 +382,7 @@ body {
   line-height: 26px;
   padding: 15px 31px;
   box-shadow: 0 0 1px #AAA;
+  cursor: default;
 }
 .query-info .query-box select {
   width: 80px;
@@ -395,6 +422,7 @@ body {
 
 .history-deal {
   margin-top: 9px;
+  cursor: default;
 }
 .history-deal li {
   float: left;
@@ -449,6 +477,7 @@ body {
 
 .deal-statistics {
   margin-top: 13px;
+  cursor: default;
 }
 .deal-statistics h3 {
   font-size: 12px;
@@ -593,6 +622,7 @@ body {
 .project .project-info .project-info-content h4 {
   color: #c3c2c2;
   padding-left: 10px;
+  cursor: default;
 }
 .project .project-info .project-info-content p {
   color: #535353;
@@ -660,4 +690,67 @@ body {
 .content-end .calendar {
   width: 350px;
   height: 356px;
+}
+.content-end .calendar .calendar-text {
+  margin-top: 10px;
+  margin-left: 22px;
+}
+.content-end .calendar .calendar-text li {
+  float: left;
+}
+.content-end .calendar .calendar-text li select {
+  margin-right: 6px;
+}
+.content-end .calendar .calendar-text li .retoday {
+  display: inline-block;
+  width: 60px;
+  height: 20px;
+  border: 1px solid #AAA;
+  font: 12px/20px "黑体";
+  color: #535353;
+  text-align: center;
+}
+.content-end .calendar .calendar-text li .retoday:hover {
+  box-shadow: 0 0 1px #AAA;
+}
+.content-end .calendar .calendar-head {
+  width: 310px;
+  margin-top: 9px;
+  margin-left: 20px;
+  border-top: 2px solid #a9cfec;
+  border-bottom: 2px solid #e1e1e1;
+}
+.content-end .calendar .calendar-head li {
+  float: left;
+  width: 44.28571px;
+  height: 29px;
+  line-height: 29px;
+  font-family: "黑体";
+  color: #535353;
+  text-align: center;
+  cursor: default;
+}
+.content-end .calendar .calendar-content {
+  margin-left: 20px;
+  width: 310px;
+}
+.content-end .calendar .calendar-content td {
+  width: 44.28571px;
+  height: 37px;
+  font-size: 11px;
+  color: #323333;
+  border: 2px solid #FFF;
+  text-align: center;
+  cursor: pointer;
+}
+.content-end .calendar .calendar-content td.date-mark, .content-end .calendar .calendar-content td:hover {
+  border: 2px solid #f7d564;
+}
+.content-end .calendar .calendar-content td .highlight {
+  color: #c9161d;
+}
+.content-end .brand-rank {
+  width: 530px;
+  height: 356px;
+  margin-left: 9px;
 }

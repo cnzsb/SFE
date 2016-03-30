@@ -69,16 +69,40 @@ body {
 
 .sl-default {
 	height: 26px;
-	line-height: 26px;
 	appearance: none;
 	background: url("../images/icon_select.png") 95% center no-repeat;
 	padding-right: 18px;
 	padding-left: 8px;
 	border: 1px solid #AAA;
 	cursor: pointer;
+	font: 12px/26px $font-ht;
+	color: #323333;
 
 	&:focus {
 		background: url("../images/icon_select_selected.png") 95% center no-repeat;
+	}
+
+	/* ie */
+	&::-ms-expand {
+		display: none;
+	}
+}
+
+.sl-sm {
+	width: 75px;
+	height: 22px;
+	appearance: none;
+	background: url('../images/icon_select_sm.png') right center no-repeat;
+	border: 1px solid #AAA;
+	cursor: pointer;
+	padding-left: 2px;
+	padding-right: 20px;
+	font: 12px/22px $font-ht;
+	color: #535353;
+	text-align: center;
+
+	&:focus {
+		box-shadow: 0 0 1px #AAA;
 	}
 
 	/* ie */
@@ -148,5 +172,6 @@ body {
 		background-color: #F3F5F6;
 		border-bottom: 1px solid #E7E8EB;
 		padding-left: 21px;
+		cursor: default;
 	}
 }
