@@ -178,7 +178,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  border-radius: 2px;
+  border-radius: 2px 0 0 2px;
 }
 
 /* 
@@ -281,7 +281,7 @@ body {
   border-radius: 50%;
 }
 .sidebar .userinfo .username {
-  padding-left: 19px;
+  padding: 0 19px;
   line-height: 56px;
   color: #FFF;
 }
@@ -780,7 +780,7 @@ body {
 .content-end .brand-rank table tr {
   cursor: pointer;
 }
-.content-end .brand-rank table tr:hover {
+.content-end .brand-rank table tr:not(:first-child):hover {
   background-color: #F4F5F6;
 }
 .content-end .brand-rank table tr th,
@@ -812,8 +812,9 @@ body {
   padding-left: 34px;
 }
 .content-end .brand-rank table tr .data-stick {
-  margin-left: 22px;
-  margin-bottom: 2px;
+  float: right;
+  margin-top: 4px;
+  margin-right: 22px;
 }
 .content-end .brand-rank table tr .data-stick span {
   background-color: #7FCBF0;

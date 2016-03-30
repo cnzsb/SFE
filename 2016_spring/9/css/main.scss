@@ -112,7 +112,7 @@
 		}
 
 		.username {
-			padding-left: 19px;
+			padding: 0 19px;
 			line-height: 56px;
 			color: #FFF;
 		}
@@ -709,7 +709,7 @@
 			tr {
 				cursor: pointer;
 
-				&:hover {
+				&:not(:first-child):hover {
 					background-color: #F4F5F6;
 				}
 
@@ -748,8 +748,9 @@
 				}
 
 				.data-stick {
-					margin-left: 22px;
-					margin-bottom: 2px;
+					float: right;
+					margin-top: 4px;
+					margin-right: 22px;
 
 					span {
 						background-color: #7FCBF0;
