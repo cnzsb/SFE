@@ -43,7 +43,9 @@
 		*/
 		.demo2 input {
 			width: 100px;
-			border: 1px solid #ccc;
+			padding: 2px 5px;
+			text-align: center;
+			border: 1px solid #777676;
 			transition: all 0.25s ease-in;
 		}
 		.demo2 input:focus {
@@ -51,6 +53,106 @@
 			border-color: #7DAFEA;
 			border-radius: 2px;
 			box-shadow: 0 0 1px 2px #7DAFEA;
+		}
+
+		/*
+			demo3
+		*/
+
+		.demo3 {
+			width: 300px;
+			height: 200px;
+			position: relative;
+		}
+
+		/* 导航标签 */
+		.tab {
+			position: absolute;
+			bottom: 5px;
+			right: 5px;
+			z-index: 100;
+		}
+
+		.tab li,
+		.tab li a {
+			display: inline-block;
+		}
+
+		.tab li a {
+			background-color: rgba(216, 214, 214, 0.5);
+			color: #FFF;
+			padding: 5px 8px;
+			cursor: pointer;
+		}
+
+		.tab li:hover {
+			background-color: rgba(216, 214, 214, 0.8);
+		}
+
+		/* 轮播 */
+		.slide-wrapper li {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 1;
+			text-align: center;
+			color: #FFF;
+			font-size: 100px;
+			font-weight: bold;
+			line-height: 200px;
+		}
+
+		.slide-wrapper li:nth-child(1) {
+			background-color: #FC4343;
+		}
+
+		.slide-wrapper li:nth-child(2) {
+			background-color: #279CFE;
+		}
+
+		.slide-wrapper li:nth-child(3) {
+			background-color: #FD7443;
+		}
+
+		/* target对象添加动画并使当前对象z-index处于最上层 */
+		.slide-wrapper>li:target {
+			z-index: 10;
+			-webkit-animation: slide 1s;
+			        animation: slide 1s;
+			-webkit-animation-iteration-count: 1;
+			        animation-iteration-count: 1;
+		}
+		
+		/* 非target对象添加动画使之z-index降至低于target的层 */
+		.slide-wrapper li:not(:target){
+			-webkit-animation: notTarget 1s;
+			        animation: notTarget 1s;
+			-webkit-animation-iteration-count: 1;
+			        animation-iteration-count: 1;
+		}
+
+		/* 轮播动画 */
+		@-webkit-keyframes slide {
+			0% {left: 100%;}
+			100% {left: 0;}
+		}
+
+		@keyframes slide {
+			0% {left: 100%;}
+			100% {left: 0;}
+		}
+
+		/* 非target对象动画 */
+		@-webkit-keyframes notTarget {
+			0% {z-index: 5;}
+			100% {z-index: 5;}
+		}
+
+		@keyframes notTarget {
+			0% {z-index: 5;}
+			100% {z-index: 5;}
 		}
 	</style>
 	<script type="text/javascript" src="../public/js/analytics.js"></script>
@@ -117,7 +219,20 @@
 	</div>
 
 	<div class="demo2">
-		<input type="text"></input>
+		<input type="text" placeholder="点我查看效果">
+	</div>
+
+	<div class="demo3">
+		<ul class="slide-wrapper">
+			<li id="slide1">1</li>
+			<li id="slide2">2</li>
+			<li id="slide3">3</li>
+		</ul>
+		<ul class="tab">
+			<li><a href="#slide1">1</a></li>
+			<li><a href="#slide2">2</a></li>
+			<li><a href="#slide3">3</a></li>
+		</ul>
 	</div>
 </body>
 </html>
