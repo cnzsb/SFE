@@ -3,6 +3,11 @@
  * @email   cnzsb@foxmail.com
  * @date    2016-03-20 20:50:02
  */
+
+html {
+	cursor: url(http://www.zhaoshibo.net/fancybox/cursor.ico), auto;
+}
+
 body {
 	width: 95%;
 	margin: 0 auto;
