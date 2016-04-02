@@ -1,0 +1,15 @@
+*,
+::before,
+::after {
+	box-sizing: border-box;
+}
+
+body,a {
+	font-family: "黑体";
+	color: #636363;
+}
+
+/*
+	color
+*/
+$main-color: #91d4da;
