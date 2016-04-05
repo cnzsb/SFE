@@ -67,7 +67,9 @@
 	     * 返回一个排序后的数组
 	     */
 	    function sortAqiData(data) {
-	    	return data.sort(function (a, b) {return a[1] > b[1]});
+	    	// return data.sort(function (a, b) {return a[1] > b[1]});
+	    	// 在IE下sort()返回一个number才有效，而不是boolean
+	    	return data.sort(function (a, b) {return a[1] - b[1];});
 	    }
 
 	    /**
