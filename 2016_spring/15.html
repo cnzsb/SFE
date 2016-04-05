@@ -24,6 +24,7 @@
 	     -->
     </ul>
     <button id="sort-btn">排序</button>
+
     <script type="text/javascript">
 	    /**
 	     * getData方法
@@ -31,9 +32,22 @@
 	     * 返回一个数组，格式见函数中示例
 	     */
 	    function getData() {
-	        /*
-	        coding here
-	        */
+	        var data = [],
+	        	sr = document.getElementById('source'),
+	        	list = sr.getElementsByTagName('li'),
+	        	items = [],			// 存放li的innerHTML
+	        	reg = /^(\D+)空气质量：\<b\>(\d+)\<\/b\>$/;
+
+	        // 取出HTMLCollection对象中的数据，保存在items数组中
+	        for (var i = 0; i < list.length; i++) {
+	        	items.push(list[i].innerHTML);
+	        }
+
+	        items.forEach(function (ele) {
+	        	var item = reg.exec(ele);
+	        	item.shift();		// 删除匹配的原始文本，即item[0]
+	        	data.push(item);
+	        });
 
 	        /*
 	        data = [
@@ -53,7 +67,7 @@
 	     * 返回一个排序后的数组
 	     */
 	    function sortAqiData(data) {
-
+	    	return data.sort(function (a, b) {return a[1] > b[1]});
 	    }
 
 	    /**
@@ -62,7 +76,11 @@
 	     * 格式见ul中的注释的部分
 	     */
 	    function render(data) {
-
+	    	var result = '';
+	    	data.forEach(function(ele, index) {
+	    		result += '<li>第' + (index + 1) + '名：' + ele[0] + '空气质量：<b>' + ele[1] + '</b></li>';
+	    	});
+	    	document.getElementById('resort').innerHTML = result;
 	    }
 
 	    function btnHandle() {
@@ -73,9 +91,10 @@
 
 
 	    function init() {
-
 	        // 在这下面给sort-btn绑定一个点击事件，点击时触发btnHandle函数
-
+	        document.getElementById('sort-btn').onclick = function () {
+	        	btnHandle();
+	        }
 	    }
 
 	    init();
