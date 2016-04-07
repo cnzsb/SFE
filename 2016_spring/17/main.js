@@ -161,14 +161,16 @@ function initAqiChartData() {
                 if (dateNow.getMonth() != monthNow) {
                     month++;
                     // 因为每月1号才会跳到次循环，因此数据总数须减去今天，同样重置天数和aqi总数的时候要加上今天
-                    chartData[dateNow.getFullYear() + '-' + (dateNow.getMonth() + 1)] = Math.ceil((aqiMonth - dataNow[date]) / (day - 1));
+                    chartData[dateNow.getFullYear() + '-' + dateNow.getMonth()] = Math.ceil((aqiMonth - dataNow[date]) / (day - 1));
                     day = 1;
                     aqiMonth = dataNow[date];
                     monthNow++;
+                    console.log(chartData);
                 }
             }
             // 最后一个月的数据
             if (day > 0) {
+                console.log(month);
                 month++;
                 chartData[dateNow.getFullYear() + '-' + (dateNow.getMonth() + 1)] = Math.ceil(aqiMonth / day);
             }
