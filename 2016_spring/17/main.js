@@ -165,12 +165,10 @@ function initAqiChartData() {
                     day = 1;
                     aqiMonth = dataNow[date];
                     monthNow++;
-                    console.log(chartData);
                 }
             }
             // 最后一个月的数据
             if (day > 0) {
-                console.log(month);
                 month++;
                 chartData[dateNow.getFullYear() + '-' + (dateNow.getMonth() + 1)] = Math.ceil(aqiMonth / day);
             }
