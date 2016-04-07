@@ -135,7 +135,6 @@ function initAqiChartData() {
                 aqiWeek += dataNow[date];
                 // 遇到周日则周数加1
                 if (dateNow.getDay() === 0) {
-                    console.log(week);
                     week++;
                     chartData['第' + week + '周'] = Math.ceil(aqiWeek / day);
                     day = 0;
