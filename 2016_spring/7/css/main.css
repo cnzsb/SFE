@@ -38,7 +38,8 @@ body {
     margin: 0 auto;
     font-size: 14px;
     text-align: center;
-    box-shadow: 0 1px 3px #EDEDEC;
+    -webkit-box-shadow: 0 1px 3px #EDEDEC;
+            box-shadow: 0 1px 3px #EDEDEC;
 }
 
 .logo {
@@ -87,7 +88,8 @@ body {
 .banner {
     height: 690px;
     background: url(../images/main_bg.jpg) center center no-repeat;
-    background-size: cover;
+    -webkit-background-size: cover;
+            background-size: cover;
     color: #fff;
 }
 
@@ -193,7 +195,8 @@ body {
 .region {
     height: 340px;
     background: url(../images/region.jpg) center center no-repeat;
-    background-size: cover;
+    -webkit-background-size: cover;
+            background-size: cover;
 }
 
 .region h2 {
@@ -372,7 +375,8 @@ body {
     width: 66.66%;
     height: 566px;
     background: url(../images/legs.jpg) center center no-repeat;
-    background-size: cover;
+    -webkit-background-size: cover;
+            background-size: cover;
 }
 
 .about-us-1-info {
@@ -520,7 +524,8 @@ body {
 
 .about-us-2-r {
     background: url(../images/station.jpg) center center no-repeat;
-    background-size: cover;
+    -webkit-background-size: cover;
+            background-size: cover;
 }
 
 .join {

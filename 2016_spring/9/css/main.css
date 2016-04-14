@@ -39,6 +39,7 @@ body {
           transform: rotateZ(-90deg);
   margin-top: 7px;
   margin-right: 7px;
+  -webkit-transition: all .25s ease-out;
   transition: all .25s ease-out;
 }
 
@@ -97,7 +98,8 @@ body {
   /* ie */
 }
 .sl-sm:focus {
-  box-shadow: 0 0 1px #AAA;
+  -webkit-box-shadow: 0 0 1px #AAA;
+          box-shadow: 0 0 1px #AAA;
 }
 .sl-sm::-ms-expand {
   display: none;
@@ -150,7 +152,8 @@ body {
 .section {
   background-color: #FFF;
   border-radius: 8px;
-  box-shadow: 0 0 1px #AAA;
+  -webkit-box-shadow: 0 0 1px #AAA;
+          box-shadow: 0 0 1px #AAA;
   overflow: hidden;
 }
 .section .title {
@@ -220,6 +223,7 @@ body {
   border-radius: 12px;
   background-color: #FFF;
   padding: 0 15px 0 36px;
+  -webkit-transition: all .25s ease;
   transition: all .25s ease;
 }
 .header .header-content .search-box .header-search:focus {
@@ -277,7 +281,8 @@ body {
   width: 55px;
   height: 55px;
   background: url(http://www.zhaoshibo.net/avatar.jpg) center center no-repeat;
-  background-size: 55px 55px;
+  -webkit-background-size: 55px 55px;
+          background-size: 55px 55px;
   border-radius: 50%;
 }
 .sidebar .userinfo .username {
@@ -320,6 +325,7 @@ body {
   list-style-position: inside;
   opacity: .5;
   filter: alpha(opacity=50);
+  -webkit-transition: all .25s ease-out;
   transition: all .25s ease-out;
   color: #6E8095;
   /* 二级导航目录 */
@@ -399,7 +405,8 @@ body {
   font-family: "黑体";
   line-height: 26px;
   padding: 15px 31px;
-  box-shadow: 0 0 1px #AAA;
+  -webkit-box-shadow: 0 0 1px #AAA;
+          box-shadow: 0 0 1px #AAA;
   cursor: default;
 }
 .query-info .query-box select {
@@ -447,7 +454,8 @@ body {
   width: 110px;
   height: 64px;
   background-color: #FFF;
-  box-shadow: 0 0 1px #AAA;
+  -webkit-box-shadow: 0 0 1px #AAA;
+          box-shadow: 0 0 1px #AAA;
   margin: 0 2px;
   text-align: center;
 }
@@ -462,7 +470,8 @@ body {
   cursor: pointer;
 }
 .history-deal li.scan-button:hover {
-  box-shadow: 0 0 2px 1px #AAA;
+  -webkit-box-shadow: 0 0 2px 1px #AAA;
+          box-shadow: 0 0 2px 1px #AAA;
 }
 .history-deal li.history-search {
   width: 138px;
@@ -472,7 +481,8 @@ body {
   text-indent: 40px;
 }
 .history-deal li.history-search:hover {
-  box-shadow: 0 0 2px 1px #AAA;
+  -webkit-box-shadow: 0 0 2px 1px #AAA;
+          box-shadow: 0 0 2px 1px #AAA;
 }
 .history-deal li.history-deal-info {
   border-top: 4px solid #FFF;
@@ -508,12 +518,14 @@ body {
   width: 196px;
   height: 70px;
   margin-right: 29px;
-  box-shadow: 0 0 1px #AAA;
+  -webkit-box-shadow: 0 0 1px #AAA;
+          box-shadow: 0 0 1px #AAA;
   background-color: #FFF;
   position: relative;
 }
 .deal-statistics ul li:hover {
-  box-shadow: 1px -1px 2px #AAA;
+  -webkit-box-shadow: 1px -1px 2px #AAA;
+          box-shadow: 1px -1px 2px #AAA;
 }
 .deal-statistics ul li p {
   padding-top: 16px;
@@ -729,7 +741,8 @@ body {
   text-align: center;
 }
 .content-end .calendar .calendar-text li .retoday:hover {
-  box-shadow: 0 0 1px #AAA;
+  -webkit-box-shadow: 0 0 1px #AAA;
+          box-shadow: 0 0 1px #AAA;
 }
 .content-end .calendar .calendar-head {
   width: 310px;
