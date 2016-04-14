@@ -16,6 +16,7 @@ gulp.task('sass', function () {
 	return sass('2016_spring/**/*.scss', {style: 'expanded'})
 		.pipe(autoprefixer({
 			browsers: [
+				'last 2 versions',
 				'ie >= 7',
 				'ie_mob >= 10',
 				'ff >= 30',
