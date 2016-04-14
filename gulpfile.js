@@ -15,7 +15,17 @@ var gulp = require('gulp'),
 gulp.task('sass', function () {
 	return sass('2016_spring/**/*.scss', {style: 'expanded'})
 		.pipe(autoprefixer({
-			browsers: ['last 2 version', 'ie >= 7']
+			browsers: [
+				'ie >= 7',
+				'ie_mob >= 10',
+				'ff >= 30',
+				'chrome >= 34',
+				'safari >= 7',
+				'opera >= 23',
+				'ios >= 7',
+				'android >= 2.3',
+				'bb >= 10'
+			]
 		}))
 		.pipe(gulp.dest('2016_spring/'))
 		.pipe(notify({message: 'Sass done!'}));
