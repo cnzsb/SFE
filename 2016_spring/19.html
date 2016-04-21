@@ -70,10 +70,10 @@
 	.queue {
 		padding-top: 50px;
 		height: 310px;
-		overflow: hidden;
+		display: flex;
+		align-items: flex-end;
 	}
 	.queue li {
-		float: left;
 		width: 10px;
 		margin: 0 2px;
 	}
@@ -92,11 +92,7 @@
 		<p class="info">当前被移除的数字为</p>
 	</div>
 	<ul class="queue">
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
+		<!-- <li></li> -->
 	</ul>
 	<script type="text/javascript">
 		var num = document.getElementById('num'),
@@ -108,33 +104,40 @@
 			li = queue.getElementsByTagName('li'),
 			msg = document.querySelector('.msg'),
 			info = document.querySelector('.info'),
+			random = document.querySelector('.random'),
+			sort = document.querySelector('.sort'),
 			aNum = [],		// 存储num
-			bgcolor = ['#FCADAD', '#53A79E', '#FC8135', '#813232', '#05A5FD'];
+			bgcolor = ['#FCADAD', '#53A79E', '#FC8135', '#5AD4B0', '#05A5FD'];
 
+		// 左侧入
 		leftIn.addEventListener('click', function () {
 			warnIn(function () {
 				aNum.unshift(num.value.trim());
 			});
 		});
 
+		// 右侧入
 		rightIn.addEventListener('click', function () {
 			warnIn(function () {
 				aNum.push(num.value.trim());
 			})
 		});
 
+		// 左侧出
 		leftOut.addEventListener('click', function () {
 			warnOut(function () {
 				info.innerHTML = '移除了数字' + aNum.shift();
 			});
 		});
 
+		// 右侧出
 		rightOut.addEventListener('click', function () {
 			warnOut(function () {
 				info.innerHTML = '移除了数字' + aNum.pop();
 			});
 		});
 
+		// 点击元素删除,事件代理
 		queue.addEventListener('click', function (e) {
 			var e = e || window.event,
 				target = e.target || e.srcElement;
@@ -143,11 +146,28 @@
 			}
 		});
 
+		// 随机按钮
+		random.addEventListener('click', function () {
+			// 添加数据则隐藏其余提示信息
+			msg.style.visibility = 'hidden';
+			num.className = '';
+			info.style.visibility = 'hidden';
+
+			randomArray(aNum);
+			renderQ();
+			isLimited();
+		});
+
+		sort.addEventListener('click', function () {
+			sortView();
+			renderQ();
+		});
+
 		// 渲染数组到页面
 		function renderQ () {
 			var list = '';
 			for (var i = 0; i < aNum.length; i++) {
-				list += '<li data-index="' + i + '">' + aNum[i] + '</li>';
+				list += '<li style="height: ' + (aNum[i] * 3) + 'px; background-color: ' + bgColor(aNum[i]) + ';" data-index="' + i + '"></li>';
 			}
 			queue.innerHTML = list;
 		}
@@ -159,15 +179,18 @@
 			if (validate(numNow.trim())) {
 				num.className = '';
 				msg.style.visibility = 'hidden';
+				leftOut.disabled = '';
+				rightOut.disabled = '';
 
 				func();
+				renderQ();
+				isLimited();
 			} else {
 				num.className = 'msg-on';
 				msg.style.visibility = 'visible';
 				num.focus();
 				num.value = '';
 			}
-			renderQ();
 		}
 
 		// 移除数据时的警告
@@ -177,12 +200,17 @@
 			if (!aNum.length) {
 				info.innerHTML = '*请先录入数字！';
 				info.style.visibility = 'visible';
+				leftOut.disabled = true;
+				rightOut.disabled = true;
 				num.focus();
 				return;
 			}
-			func();
-			info.style.visibility = 'visible';
-			renderQ();
+			else {
+				func();
+				info.style.visibility = 'visible';
+				renderQ();
+				isLimited();
+			}
 		}
 
 		// 点击当前元素移除
@@ -194,9 +222,81 @@
 		}
 
 		// 验证输入
-		function validate (num) {			
+		function validate (num) {
 			var reg = /^(?:[1-9]\d|100)$/;
 			return reg.test(num);
+		}
+
+		// 判断是否超出限制
+		function isLimited () {
+			// 添加数据确保移除按钮可用
+			leftOut.disabled = '';
+			rightOut.disabled = '';
+
+			if (aNum.length > 59) {
+				num.value = '';
+				num.placeholder = '已达数据上限';
+				num.disabled = true;
+				leftIn.disabled = true;
+				rightIn.disabled = true;
+				return;
+			}
+			else if (aNum.length < 60){
+				num.placeholder = '请输入10-100的数字';
+				num.disabled = '';
+				leftIn.disabled = '';
+				rightIn.disabled = '';
+			}
+		}
+
+		// 随机生成一组数字
+		function randomArray (array) {
+			// 若数据为上限时，则重新生成一组
+			if (array.length == 60) {
+				array.length = 0;
+			}
+			for (var i = array.length; i < 60; i++) {
+				array[i] = Math.round(Math.random() * 90 + 10);
+			}
+		}
+
+		// 设置数据背景颜色
+		function bgColor (num) {
+			if (num < 60) {
+				return bgcolor[0];
+			} else if (num > 59 && num < 70) {
+				return bgcolor[1];
+			} else if (num > 69 && num < 80) {
+				return bgcolor[2];
+			} else if (num > 79 && num < 90) {
+				return bgcolor[3];
+			} else if (num > 89) {
+				return bgcolor[4];
+			}
+		}
+
+		// 可视化排序
+		function sortView() {
+			console.log(aNum);
+			for (var i = 0; i < aNum.length; i++) {
+				console.log(aNum[i]);
+				if (aNum[i] > aNum[i + 1]) {
+					console.log(aNum[i] + ':' + aNum[i + 1]);
+					aNum[i] ^= aNum[i + 1];
+					aNum[i + 1] ^= aNum[i];
+					aNum[i] ^= aNum[i + 1];					
+					console.log(aNum[i] + ':' + aNum[i + 1]);
+				}/*
+				for (var j = aNum.length; j >= 0; j--) {
+					if (aNum[i] > aNum[j]) {
+						console.log(aNum[i] + ':' + aNum[j]);
+						aNum[i] ^= aNum[j];
+						aNum[j] ^= aNum[i];
+						aNum[i] ^= aNum[j];
+					}
+				}*/
+			}
+			console.log(aNum);
 		}
 	</script>
 	<script type="text/javascript" src="../public/js/analytics.js"></script>
