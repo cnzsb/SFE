@@ -22,12 +22,20 @@
 		padding-top: 50px;
 		min-width: 450px;
 	}
-	#num {
+	#num,
+	.sortIntervalControl {
 		border: 2px solid #eee;
 		-webkit-transition: all .3s ease;
 		transition: all .3s ease;
 		padding: 2px 10px;
 		outline: none;
+	}
+	label {
+		font-size: 80%;
+	}
+	.sortIntervalControl {
+		width: 50px;
+		padding: 0;
 	}
 	.operate button {
 		background-color: #fff;
@@ -40,7 +48,9 @@
 		font-weight: bold;
 		border-color: #E7D8D8;
 	}
-	#num:focus, .operate button:active {
+	#num:focus,
+	.sortIntervalControl:focus,
+	.operate button:active {
 		border-color: #ccc;
 		-webkit-box-shadow: 0 0 2px #ccc;
 		        box-shadow: 0 0 2px #ccc;
@@ -70,8 +80,14 @@
 	.queue {
 		padding-top: 50px;
 		height: 310px;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
 		display: flex;
-		align-items: flex-end;
+		-webkit-box-align: end;
+		-webkit-align-items: flex-end;
+		    -ms-flex-align: end;
+		        align-items: flex-end;
 	}
 	.queue li {
 		width: 10px;
@@ -88,6 +104,7 @@
 		<button class="right-out" type="button">右侧出</button>
 		<button class="random" type="button">随机</button>
 		<button class="sort" type="button">排序</button>
+		<label>排序速度：<input class="sortIntervalControl" type="number" value="50"></label>
 		<p class="msg">*请输入10-100的数字！</p>
 		<p class="info">当前被移除的数字为</p>
 	</div>
@@ -106,7 +123,10 @@
 			info = document.querySelector('.info'),
 			random = document.querySelector('.random'),
 			sort = document.querySelector('.sort'),
+			sortIntervalControl = document.querySelector('.sortIntervalControl'), 
+			sortInterval = 0,	// 排序间隔时间
 			aNum = [],		// 存储num
+			aNumLen = 60,	// 存储上限
 			bgcolor = ['#FCADAD', '#53A79E', '#FC8135', '#5AD4B0', '#05A5FD'];
 
 		// 左侧入
@@ -116,11 +136,19 @@
 			});
 		});
 
-		// 右侧入
+		// 右侧入，默认回车即为右侧插入数据
 		rightIn.addEventListener('click', function () {
 			warnIn(function () {
 				aNum.push(num.value.trim());
 			})
+		});
+		num.addEventListener('keydown', function (e) {
+			var e = e || window.event;
+			console.log(e.which + ',' + e.keyCode);
+		    var code = e.which || e.keyCode;
+			if (code == 13) {
+				rightIn.click();
+			}
 		});
 
 		// 左侧出
@@ -153,18 +181,29 @@
 			num.className = '';
 			info.style.visibility = 'hidden';
 
-			randomArray(aNum);
+			randomArray(aNum, aNumLen);
 			renderQ();
 			isLimited();
 		});
 
+		// 排序按钮
 		sort.addEventListener('click', function () {
+			if (!aNum.length) {
+				info.innerHTML = '*请先录入数字！';
+				info.style.visibility = 'visible';
+				return;
+			}
+			sortInterval = sortIntervalControl.value;
 			sortView();
-			renderQ();
 		});
 
 		// 渲染数组到页面
 		function renderQ () {
+			// 排序时点击操作其他页面会重置定时器
+			clearTimeout(isSort);
+			m = 0;
+			n = 0;
+			isSort = 0;
 			var list = '';
 			for (var i = 0; i < aNum.length; i++) {
 				list += '<li style="height: ' + (aNum[i] * 3) + 'px; background-color: ' + bgColor(aNum[i]) + ';" data-index="' + i + '"></li>';
@@ -233,7 +272,7 @@
 			leftOut.disabled = '';
 			rightOut.disabled = '';
 
-			if (aNum.length > 59) {
+			if (aNum.length > aNumLen - 1) {
 				num.value = '';
 				num.placeholder = '已达数据上限';
 				num.disabled = true;
@@ -241,7 +280,7 @@
 				rightIn.disabled = true;
 				return;
 			}
-			else if (aNum.length < 60){
+			else if (aNum.length < aNumLen){
 				num.placeholder = '请输入10-100的数字';
 				num.disabled = '';
 				leftIn.disabled = '';
@@ -250,12 +289,12 @@
 		}
 
 		// 随机生成一组数字
-		function randomArray (array) {
+		function randomArray (array, len) {
 			// 若数据为上限时，则重新生成一组
-			if (array.length == 60) {
+			if (array.length == len) {
 				array.length = 0;
 			}
-			for (var i = array.length; i < 60; i++) {
+			for (var i = array.length; i < len; i++) {
 				array[i] = Math.round(Math.random() * 90 + 10);
 			}
 		}
@@ -276,27 +315,44 @@
 		}
 
 		// 可视化排序
+		var m = 0,
+			n = 0,
+			isSort = 0;
 		function sortView() {
-			console.log(aNum);
-			for (var i = 0; i < aNum.length; i++) {
-				console.log(aNum[i]);
-				if (aNum[i] > aNum[i + 1]) {
-					console.log(aNum[i] + ':' + aNum[i + 1]);
-					aNum[i] ^= aNum[i + 1];
-					aNum[i + 1] ^= aNum[i];
-					aNum[i] ^= aNum[i + 1];					
-					console.log(aNum[i] + ':' + aNum[i + 1]);
-				}/*
-				for (var j = aNum.length; j >= 0; j--) {
-					if (aNum[i] > aNum[j]) {
-						console.log(aNum[i] + ':' + aNum[j]);
-						aNum[i] ^= aNum[j];
-						aNum[j] ^= aNum[i];
-						aNum[i] ^= aNum[j];
-					}
-				}*/
+			// 多次点击则清除多余定时器
+			clearTimeout(isSort);
+			isSort ++;
+			if (n == 0) {
+				n = aNum.length - 1;
 			}
-			console.log(aNum);
+			li[m].style.backgroundColor = '#F0DF04';
+			li[n].style.backgroundColor = '#F0DF04';
+			if (aNum[m] > aNum[n]) {
+				li[m].style.backgroundColor = '#F00';
+				li[n].style.backgroundColor = '#000';						
+				li[m].style.height = (li[m].offsetHeight ^ li[n].offsetHeight) + 'px';
+				aNum[m] ^= aNum[n];
+				li[n].style.height = (li[m].offsetHeight ^ li[n].offsetHeight) + 'px';
+				aNum[n] ^= aNum[m];
+				li[m].style.height = (li[m].offsetHeight ^ li[n].offsetHeight) + 'px';
+				aNum[m] ^= aNum[n];
+			}
+			setTimeout(function () {
+				li[n].style.backgroundColor = bgColor(aNum[n]);
+				n --;
+				if (n == m && m < aNum.length) {
+					n = aNum.length - 1;
+					li[m].style.backgroundColor = bgColor(aNum[m]);
+					m ++;
+					if (m >= aNum.length - 1) {
+						m = 0;
+						n = 0;
+						isSort = 0;
+						return;
+					}
+				}
+				isSort = setTimeout(sortView, sortInterval);
+			}, 50);
 		}
 	</script>
 	<script type="text/javascript" src="../public/js/analytics.js"></script>
