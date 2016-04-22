@@ -104,7 +104,7 @@
 		<button class="right-out" type="button">右侧出</button>
 		<button class="random" type="button">随机</button>
 		<button class="sort" type="button">排序</button>
-		<label>排序速度：<input class="sortIntervalControl" type="number" value="50"></label>
+		<label>排序速度：<input class="sortIntervalControl" type="number" value="10"></label>
 		<p class="msg">*请输入10-100的数字！</p>
 		<p class="info">当前被移除的数字为</p>
 	</div>
@@ -126,7 +126,7 @@
 			sortIntervalControl = document.querySelector('.sortIntervalControl'), 
 			sortInterval = 0,	// 排序间隔时间
 			aNum = [],		// 存储num
-			aNumLen = 60,	// 存储上限
+			aNumLen = 40,	// 存储上限
 			bgcolor = ['#FCADAD', '#53A79E', '#FC8135', '#5AD4B0', '#05A5FD'];
 
 		// 左侧入
@@ -196,6 +196,15 @@
 			sortInterval = sortIntervalControl.value;
 			sortView();
 		});
+
+		// 页面刷新时重置按钮等为可用
+		window.onbeforeunload = function () {			
+			num.disabled = '';
+			leftIn.disabled = '';
+			rightIn.disabled = '';
+			leftOut.disabled = '';
+			rightOut.disabled = '';
+		};
 
 		// 渲染数组到页面
 		function renderQ () {
