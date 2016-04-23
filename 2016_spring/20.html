@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<title>正则匹配 | cnzsb</title>
+	<style type="text/css">
+		body {
+			display: -webkit-box;
+			display: -webkit-flex;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+			-webkit-flex-direction: column;
+			    -ms-flex-direction: column;
+			        flex-direction: column;
+			-webkit-box-align: center;
+			-webkit-align-items: center;
+			    -ms-flex-align: center;
+			        align-items: center;
+			min-width: 450px;
+		}
+
+		.handle-wrap {
+			padding: 5px 0;
+			overflow: hidden;
+		}
+
+		.handle-wrap button[type='submit'] {
+			float: right;
+		}
+
+		.search-wrap {
+			padding: 5px 0;
+			text-align: center;
+			border-top: 1px dashed #322C2C;
+			border-bottom: 1px dashed #322C2C;
+		}
+
+		ul,
+		li {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		.result {
+			padding-top: 20px;
+			overflow: hidden;
+		}
+		.result li {
+			float: left;
+			padding: 5px;
+			margin: 0 2px;
+			border: 1px solid tomato;
+		}
+		.searched {
+			color: #E73D3D;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<form action="##">
+		<textarea class="content" cols="30" rows="10" placeholder="输入文本，以任意符号作为分割（“ctrl + enter” 或者 “插入”按钮 进行插入）"></textarea>
+		<div class="handle-wrap">
+			<button type="reset">重置</button>
+			<button class="insert" type="submit">插入</button>
+		</div>
+		<div class="search-wrap">
+			<input class="search-content" type="text" placeholder="输入要查询的内容">
+			<button class="search" type="button">查询</button>
+		</div>
+	</form>
+	<ul class="result">
+		<!-- <li>1</li>
+		<li>2</li>
+		<li>3sadf<span class="searched">s</span>djafkjskdfj</li>
+		<li>4</li> -->
+	</ul>
+
+	<script type="text/javascript">
+		var content = document.querySelector('.content'),
+			searchC = document.querySelector('.search-content'),
+			result = document.querySelector('.result'),
+			insert = document.querySelector('.insert'),
+			search = document.querySelector('.search'),
+			reg = /([^\dA-Za-z\u4e00-\u9fa5]+)/;
+	</script>
+	<script type="text/javascript" src="../public/js/analytics.js"></script>
+</body>
+</html>
