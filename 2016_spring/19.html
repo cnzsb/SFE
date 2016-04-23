@@ -104,7 +104,7 @@
 		<button class="right-out" type="button">右侧出</button>
 		<button class="random" type="button">随机</button>
 		<button class="sort" type="button">排序</button>
-		<label>排序速度：<input class="sortIntervalControl" type="number" value="10"></label>
+		<label>排序速度：<input class="sortIntervalControl" type="number" value="50"></label>
 		<p class="msg">*请输入10-100的数字！</p>
 		<p class="info">当前被移除的数字为</p>
 	</div>
@@ -192,6 +192,10 @@
 				info.innerHTML = '*请先录入数字！';
 				info.style.visibility = 'visible';
 				return;
+			} else if (sortOver) {
+				info.innerHTML = '*已完成排序！';
+				info.style.visibility = 'visible';
+				return;
 			}
 			sortInterval = sortIntervalControl.value;
 			sortView();
@@ -208,11 +212,12 @@
 
 		// 渲染数组到页面
 		function renderQ () {
-			// 排序时点击操作其他页面会重置定时器
+			// 排序时点击操作其他内容会重置定时器
 			clearTimeout(isSort);
 			m = 0;
 			n = 0;
-			isSort = 0;
+			isSort = 0,
+			sortOver = false;
 			var list = '';
 			for (var i = 0; i < aNum.length; i++) {
 				list += '<li style="height: ' + (aNum[i] * 3) + 'px; background-color: ' + bgColor(aNum[i]) + ';" data-index="' + i + '"></li>';
@@ -326,7 +331,8 @@
 		// 可视化排序
 		var m = 0,
 			n = 0,
-			isSort = 0;
+			isSort = 0,		// 每个定时器名称，防止多次点击
+			sortOver = false;	// 判断排序是否完成
 		function sortView() {
 			// 多次点击则清除多余定时器
 			clearTimeout(isSort);
@@ -346,7 +352,7 @@
 				li[m].style.height = (li[m].offsetHeight ^ li[n].offsetHeight) + 'px';
 				aNum[m] ^= aNum[n];
 			}
-			setTimeout(function () {
+			isSort = setTimeout(function () {
 				li[n].style.backgroundColor = bgColor(aNum[n]);
 				n --;
 				if (n == m && m < aNum.length) {
@@ -357,11 +363,12 @@
 						m = 0;
 						n = 0;
 						isSort = 0;
+						sortOver = true;
 						return;
 					}
 				}
-				isSort = setTimeout(sortView, sortInterval);
-			}, 50);
+				sortView();
+			}, sortInterval);
 		}
 	</script>
 	<script type="text/javascript" src="../public/js/analytics.js"></script>
