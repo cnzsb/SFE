@@ -27,7 +27,7 @@
 			overflow: hidden;
 		}
 
-		.handle-wrap button[type='submit'] {
+		.handle-wrap .insert {
 			float: right;
 		}
 
@@ -61,15 +61,16 @@
 	</style>
 </head>
 <body>
+	<p>插入一段文本，以任意符号如回车、空格、标点符号等作为分隔。插入后输入要查询的内容，可进行高亮显示。</p>
 	<form action="##">
-		<textarea class="content" cols="30" rows="10" placeholder="输入文本，以任意符号作为分割（“ctrl + enter” 或者 “插入”按钮 进行插入）"></textarea>
+		<textarea class="content" cols="30" rows="10" placeholder="输入文本，以任意符号作为分隔（ctrl + enter）"></textarea>
 		<div class="handle-wrap">
 			<button type="reset">重置</button>
-			<button class="insert" type="submit">插入</button>
+			<button class="insert" type="button">插入</button>
 		</div>
 		<div class="search-wrap">
-			<input class="search-content" type="text" placeholder="输入要查询的内容">
-			<button class="search" type="button">查询</button>
+			<input class="search-content" type="text" placeholder="输入查询内容（enter）">
+			<button class="search" type="submit">查询</button>
 		</div>
 	</form>
 	<ul class="result">
@@ -85,7 +86,54 @@
 			result = document.querySelector('.result'),
 			insert = document.querySelector('.insert'),
 			search = document.querySelector('.search'),
-			reg = /([^\dA-Za-z\u4e00-\u9fa5]+)/;
+			reset = document.querySelector('.handle-wrap button[type=reset]'),
+			reg = /[^\dA-Za-z\u4e00-\u9fa5]+/,
+			userContent = [];	// 分割为数组后的用户输入内容
+
+		// 插入按钮，绑定ctrl+enter快捷方式
+		insert.addEventListener('click', function () {
+			// 处理新添加的文本
+			var newContent = [];
+			newContent = content.value.trim().split(reg).filter(function (e) {
+				return e !== '';
+			});
+			userContent = userContent.concat(newContent);
+			render(userContent);
+		});
+
+		content.addEventListener('keydown', function (e) {
+			var e = e || window.event,
+				code = e.which || e.keyCode;
+			if (code === 13 && e.ctrlKey) {
+				insert.click();
+			}
+		});
+
+		// 查询按钮
+		search.addEventListener('click', function () {
+			var userSearch = searchC.value.trim().toString(),
+				searchedC = [],
+				searchReg = new RegExp('(' + userSearch + ')', 'g');
+			searchedC = userContent.map(function(e) {
+				// 返回给搜索文本用的数组，给匹配的文本$1追加样式
+				return e.toString().replace(searchReg, '<span class="searched">$1</span>');
+			});
+			render(searchedC);
+		});
+
+		// 重置按钮，除默认行为外增加清除结果展示区功能
+		reset.addEventListener('click', function () {
+			result.innerHTML = '';
+			userContent = [];
+		});
+
+		function render (arr) {
+			var toInsert = '';
+			for (var i = 0; i < arr.length; i++) {
+				toInsert += '<li>' + arr[i] + '</li>';
+			}
+			result.innerHTML = toInsert;
+		}
 	</script>
 	<script type="text/javascript" src="../public/js/analytics.js"></script>
 </body>
